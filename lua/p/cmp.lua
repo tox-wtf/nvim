@@ -15,11 +15,19 @@ return {
         local defaults = require("cmp.config.default")()
         local auto_select = true
 
-        return {
+        cmp.setup {
             completion = {
                 completeopt = "menu,menuone" .. (auto_select and "" or ",noselect"),
             },
             preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
+            snippet = {
+                expand = function(args)
+                    require("luasnip").lsp_expand(args.body)
+                end,
+            },
+            window = {
+                completion = cmp.config.window.bordered(),
+            },
             mapping = cmp.mapping.preset.insert({
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -34,14 +42,38 @@ return {
                     fallback()
                 end,
             }),
-            sources = cmp.config.sources({
+            sources = cmp.config.sources {
                 { name = "nvim_lsp" },
                 { name = "path" },
                 { name = "luasnip" },
             }, {
                 { name = "buffer" },
-            }),
+            },
             sorting = defaults.sorting,
         }
+
+        cmp.setup.filetype("gitcommit", {
+            sources = cmp.config.sources {
+                { name = "git" },
+            }, {
+                { name = "buffer" },
+            },
+        })
+
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources {
+                { name = "path" },
+            }, {
+                { name = "cmdline" },
+            },
+        })
+
+        cmp.setup.cmdline({"/", "?"}, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = "buffer" },
+            },
+        })
     end,
 }
