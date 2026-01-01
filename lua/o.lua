@@ -1,4 +1,5 @@
 local o = vim.opt
+local ol = vim.opt_local
 
 -- Colors
 vim.api.nvim_create_autocmd("VimEnter", {
@@ -48,9 +49,30 @@ o.undodir = vim.fn.expand("~/.local/cache/nvim/undo")
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "typst",
     callback = function()
-        o.expandtab = true
-        o.shiftwidth = 4
-        o.tabstop = 4
-        o.smartindent = true
+        ol.expandtab = true
+        ol.shiftwidth = 4
+        ol.tabstop = 4
+        ol.smartindent = true
     end,
 })
+
+vim.filetype.add({
+    extension = {
+        xml = "xml",
+        xsl = "xsl",
+    }
+})
+
+-- Autocommand for XML/XSL
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "xml", "xsl" },
+    callback = function()
+        ol.expandtab = true
+        ol.shiftwidth = 2
+        ol.tabstop = 2
+        ol.smartindent = false
+    end,
+})
+
+-- Default borders
+vim.o.winborder = "double"
