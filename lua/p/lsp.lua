@@ -55,6 +55,12 @@ return {
             }
         })
 
+        vim.filetype.add({
+            extension = {
+                ["scd"] = "scdoc",
+            }
+        })
+
         vim.lsp.config("*", {
             capabilities = {
                 textDocument = {
