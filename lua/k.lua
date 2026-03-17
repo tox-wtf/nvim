@@ -66,7 +66,9 @@ vim.cmd([[
 
 -- Telescope mappings
 local ts = require("telescope.builtin")
-map("n", "<leader>ff", ts.find_files,                 { desc = "Find files"    })
-map("n", "<leader>fg", ts.live_grep,                  { desc = "Find grep"     })
-map("n", "<leader>fb", ts.buffers,                    { desc = "Find buffers"  })
-map("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Find projects" })
+map("n", "<leader>ff", ts.find_files,                 { desc = "Find files"         })
+map("n", "<leader>fg", ts.live_grep,                  { desc = "Find grep"          })
+map("n", "<leader>fb", ts.buffers,                    { desc = "Find buffers"       })
+map("n", "<leader>fd", ts.diagnostics,                { desc = "Find diagnostics"   })
+map("n", "<leader>fs", ts.lsp_document_symbols,       { desc = "Find symbols"       })
+map("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Find projects"      })
