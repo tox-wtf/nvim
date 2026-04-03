@@ -60,8 +60,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.filetype.add({
     extension = {
-        xml = "xml",
-        xsl = "xsl",
+        xsl = "docbk",
     }
 })
 
