@@ -1,18 +1,9 @@
 local o = vim.opt
 local ol = vim.opt_local
 
--- Colors
--- vim.api.nvim_create_autocmd("VimEnter", {
---     pattern = "*",
---     callback = function()
---         vim.cmd("highlight StatusLine   guibg=NONE")
---         vim.cmd("highlight StatusLineNC guibg=NONE")
---     end,
--- })
-
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "NonText", { bg = "NONE", fg = "#333339" })
-vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#333339" }) -- line numbers
+vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#333339" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
