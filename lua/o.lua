@@ -20,6 +20,11 @@ o.termguicolors = true
 o.cmdheight = 0
 o.statusline = "%= %l,%c %m"
 
+-- Line wrapping
+o.wrap = false
+o.textwidth = 0
+o.wrapmargin = 0
+
 -- Tabs
 o.expandtab = true
 o.shiftwidth = 4
@@ -34,7 +39,6 @@ o.listchars = {
 }
 
 -- View
-o.textwidth = 80
 o.scrolloff = 2
 
 -- History
