@@ -26,29 +26,9 @@ map("v", "<A-Up>",   ":m '<-2<cr>gv=gv", { noremap = true, silent = true, desc =
 map("n", "<A-Down>", ":m .+1<cr>==",     { noremap = true, silent = true, desc = "Move line down" })
 map("n", "<A-Up>",   ":m .-2<cr>==",     { noremap = true, silent = true, desc = "Move line up" })
 
--- Splits
-map("n", "<C-a>|", ":vsplit<cr>", opts)
-map("n", "<C-a>-", ":split<cr>",  opts)
-
 -- Buffers
 map("n", "<s-tab>", ":bp<cr>", opts)
 map("n", "<tab>",   ":bn<cr>", opts)
-
--- Terms
-map("t", "<Esc>", "<C-\\><C-n><C-w>h",  { noremap = true, silent = true, desc = "Exit term mode" })
-map("n", "<leader>tn", ":term<cr>i",    { noremap = true, silent = true, desc = "Create a new term" })
-
--- Move to window using <ctrl> arrow keys
-map("n", "<C-a><Right>", "<C-w>l", { desc = "Go to Right Window", remap = true })
-map("n", "<C-a><Left>",  "<C-w>h", { desc = "Go to Left Window",  remap = true })
-map("n", "<C-a><Down>",  "<C-w>j", { desc = "Go to Lower Window", remap = true })
-map("n", "<C-a><Up>",    "<C-w>k", { desc = "Go to Upper Window", remap = true })
-
--- Resize window using <ctrl-shift> arrow keys
-map("n", "<C-S-Right>",  ":vertical resize +2<cr>", { desc = "Increase Window Width"  })
-map("n", "<C-S-Left>", ":vertical resize -2<cr>",   { desc = "Decrease Window Width"  })
-map("n", "<C-S-Down>",  ":resize -2<cr>",           { desc = "Decrease Window Height" })
-map("n", "<C-S-Up>",    ":resize +2<cr>",           { desc = "Increase Window Height" })
 
 -- "Lazy shift finger" command abbreviations
 -- https://superuser.com/questions/1060424/how-can-i-permanently-map-the-vim-command-w-to-w
