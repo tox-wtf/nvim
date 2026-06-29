@@ -21,6 +21,9 @@ return {
             "lua_ls",
             "rust_analyzer",
             "tinymist",
+            "jdtls",
+            "gopls",
+            "vhdl_ls",
         })
 
         vim.diagnostic.config({
