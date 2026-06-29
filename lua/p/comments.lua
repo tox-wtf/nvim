@@ -27,6 +27,16 @@ return {
             PERF = {
                 icon = "%",
             },
+            Q = {
+                icon = "Q",
+                color = "#F9F9FF",
+                alt = { "QUESTION" },
+            },
+            A = {
+                icon = "A",
+                color = "hint",
+                alt = { "ANSWER" },
+            },
             NOTE = {
                 icon = "i",
                 color = "hint",
